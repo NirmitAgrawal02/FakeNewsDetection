@@ -16,7 +16,8 @@ x_test_vectorized = vectorizer.transform(x_test)
 clf = LinearSVC()
 clf.fit(x_train_vectorized, y_train)
 clf.score(x_train_vectorized, y_train)
-text = "2 killed and 6 injured in mass shooting at Florida State University"
+print("Enter a news article to check if it is real or fake")
+text = input()
 vectorized_text = vectorizer.transform([text])
 value = clf.predict(vectorized_text)
 value = "Real" if value == 0 else "Fake"
