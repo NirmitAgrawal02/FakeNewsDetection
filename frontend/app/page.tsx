@@ -14,7 +14,7 @@ export default function Home() {
       body: JSON.stringify({ text }),
     });
     const data = await response.json();
-    setNews(data.result);
+    setNews(data.prediction);
   };
 
   return (
@@ -39,12 +39,13 @@ export default function Home() {
             Check News
           </button>
           </div>
-        </form>
-          {news && (
+          {news != null && (
             <p className="text-lg font-semibold mt-4">
-              Result: ${news.toLocaleString()}
+              Result: {news}
             </p>
           )}
+        </form>
+          
     </div>
     </div>
   );
